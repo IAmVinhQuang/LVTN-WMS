@@ -1,0 +1,165 @@
+﻿<Window x:Class="LVTN.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LVTN"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Icon ="LOGO.ico"
+    Title="Warehouse Managerment System" Height="850" Width="1600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" WindowState="Maximized">
+    <Border Padding="10">
+        
+        <StackPanel Background="WhiteSmoke">
+            
+            <!-- Title-->
+            <StackPanel >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="8*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Background="SlateGray" Orientation="Horizontal">
+                        <Image  Source="Images/LOGO.png" Width="50" Margin="5 0 5 0" Grid.Column="0"/>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Foreground="White" FontWeight="Bold" Text="Đại học Quốc Gia TPHCM" VerticalAlignment="Center" FontSize="20" FontFamily="Microsoft Tai Le" Margin="0 5" ></TextBlock>
+                            <TextBlock Foreground="White" FontWeight="Bold" Text="Trường Đại học Bách Khoa" VerticalAlignment="Center" FontSize="18" FontFamily="Microsoft Tai Le" Margin="5 0" ></TextBlock>
+                        </StackPanel>
+                    </StackPanel >
+
+                    <materialDesign:ColorZone Mode="Standard"  Padding="16" Grid.Column="1" Background="LightGray">
+                        <StackPanel Background="LightGray" Orientation="Horizontal">
+                            <ToggleButton   Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+                            <TextBlock    VerticalAlignment="Center"    Margin="16 0 0 0" FontWeight="Bold" FontSize="20">
+                                 WAREHOUSE MANGEMENT SYSTEM - MOBILE RACKING SYSTEM
+                            </TextBlock>
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </Grid>
+            </StackPanel>
+            
+            <!-- Trang chủ -->
+            <StackPanel  >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="8*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Background="SlateGray">
+                        <TextBlock Margin="20"/>
+                        <!-- button trang chủ -->
+                        <Button Name="BtnMainButton"  Click="BtnMainButton_Click"  HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="Home"   Width="25" Height="25" Foreground="White"/>
+                                <TextBlock Text=" TRANG CHỦ                                  " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Thiết lập ban đầu-->
+                        <TextBlock Text="THIẾT LẬP BAN ĐẦU" FontSize="20" Foreground="White" FontWeight="Bold" Margin="10 30"/>
+
+                        <!-- DỮ LIỆU CƠ SỞ-->
+                        <Button Name="btnDlcsButton" Click="btnDlcsButton_Click"  HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="Database" Width="25" Height="25" Foreground="White" />
+                                <TextBlock Text=" DỮ LIỆU CƠ SỞ                               " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- QUẢN LÝ KHACH HÀNG -->
+                        <Button Name="btnQLKhachhangButton" Click="btnQLKhachhangButton_Click"  HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="Account"  Width="25" Height="25" Foreground="White"/>
+                                <TextBlock Text=" QUẢN LÝ KHÁCH HÀNG             " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- QUẢN LÝ NHÀ CUNG CẤP -->
+                        <Button Name="btnQLNhaccButton" Click="btnQLNhaccButton_Click"  HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="AccountBox"   Width="25" Height="25" Foreground="White"/>
+                                <TextBlock Text=" QUẢN LÝ NHÀ CUNG CẤP                  " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- QUẢN LÝ SẢN PHẨM -->
+                        <Button Name="btnQLSanphamButton" Click="btnQLSanphamButton_Click" HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="Gift"  Width="25" Height="25" Foreground="White"/>
+                                <TextBlock Text=" QUẢN LÝ SẢN PHẨM                   " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+                                                
+                        <!-- QUẢN LÝ TỒN KHO-->
+                        <Button Name="btnQLTonkhoButton"  Click="btnQLTonkhoButton_Click" HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="Stocking"  Width="25" Height="25" Foreground="White" />
+                                <TextBlock Text=" QUẢN LÝ TỒN KHO                             " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- QUẢN LÝ NGHIỆP VỤ-->
+                        <TextBlock Text="QUẢN LÝ NGHIỆP VỤ" FontSize="20" Margin="10 20" Foreground="White" FontWeight="Bold"/>
+
+
+                        <!-- NHẬP KHO-->
+                        <Button Name="BtnNhapKho" Click="BtnNhapKho_Click" HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="ArrowDownBox" Width="25" Height="25" Foreground="White" />
+                                <TextBlock Text=" NHẬP KHO                                 " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- XUẤT KHO-->
+                        <Button Name="btnXuatkhoButton" Click="btnXuatkhoButton_Click"  HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="ArrowUpBox"  Width="25" Height="25" Foreground="White"/>
+                                <TextBlock Text=" XUẤT KHO                                    " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- VỊ TRÍ-->
+                        <Button Name="btnVitriButton" Click="btnVitriButton_Click"  HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="GoogleMaps" Width="25" Height="25" Foreground="White" />
+                                <TextBlock Text=" VỊ TRÍ                                             " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- BÁO CÁO THỐNG KÊ-->
+                        <TextBlock Text="BÁO CÁO THỐNG KÊ" FontSize="20" Margin="10 20" Foreground="White" FontWeight="Bold"/>
+                       
+                        <!-- THỐNG KÊ KHÁC-->
+                        <Button Name="btnThongkeButton" Click="btnThongkeButton_Click"  HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="ChartLine"  Width="25" Height="25" Foreground="White" />
+                                <TextBlock Text=" THỐNG KÊ                              " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+                        
+                        <TextBlock Text="ĐĂNG XUẤT" FontSize="20" Margin="10 20" Foreground="White" FontWeight="Bold"/>
+                        
+                        <!-- ĐĂNG XUẤT-->
+                        <Button Name="btnDangxuatButton"  Click="btnDangxuatButton_Click" HorizontalAlignment="Left" Grid.Column="0" Background="SlateGray" Style="{StaticResource MaterialDesignFlatButton}"  ToolTip="MaterialDesignFlatButton" >
+                            <StackPanel Orientation="Horizontal"  >
+                                <materialDesign:PackIcon Kind="Logout"  Width="25" Height="25" Foreground="White" />
+                                <TextBlock Text=" ĐĂNG XUẤT                             " Foreground="White" FontSize="18"   />
+                            </StackPanel>
+                        </Button>
+
+                        <TextBlock Margin="10"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Frame x:Name="Main" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+            
+
+
+        </StackPanel>
+    </Border>
+    
+</Window>
